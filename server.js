@@ -35,7 +35,7 @@ app.use(express.json({ limit: '6mb' })); // 6mb pour laisser passer les photos e
 // ---------------------------------------------------------
 // Base de données
 // ---------------------------------------------------------
-const db = new Database(path.join(__dirname, 'data', 'hub.db'));
+const db = new DatabaseSync(path.join(__dirname, 'data', 'hub.db'));
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS admin (
